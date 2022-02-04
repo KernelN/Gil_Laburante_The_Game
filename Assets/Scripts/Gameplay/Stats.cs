@@ -1,5 +1,6 @@
 ﻿namespace GilLaburante.Gameplay
 {
+    [System.Serializable]
     public struct Stats
     {
         public float speed;

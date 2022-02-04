@@ -1,6 +1,7 @@
 ﻿namespace GilLaburante.Gameplay
 {
-    public struct CharacterData
+    [System.Serializable]
+    public struct PlayerData
     {
         public Stats baseStats;
         public Stats currentStats;
