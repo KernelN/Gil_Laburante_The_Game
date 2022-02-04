@@ -18,6 +18,10 @@ namespace GilLaburante.Gameplay.Inputs
             InputRecieved += inputManager.OnMoveInputReceived;
             //joystick = GetComponent<RectTransform>();
         }
+        void OnDestroy()
+        {
+            InputRecieved -= inputManager.OnMoveInputReceived;
+        }
         private void Update()
         {
             if (pointerOver)

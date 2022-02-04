@@ -15,7 +15,7 @@ namespace GilLaburante.Gameplay
         {
             data.currentStats = data.baseStats;
         }
-        private void FixedUpdate()
+        private void Update()
         {
             if (movementDir.sqrMagnitude > 0)
             {
@@ -31,12 +31,13 @@ namespace GilLaburante.Gameplay
         //Methods
         void Move()
         {
-            if (Physics.Raycast(transform.position, movementDir, data.currentStats.speed))
+            float speedThisFrame = data.currentStats.speed * Time.deltaTime;
+            if (Physics.Raycast(transform.position, movementDir, speedThisFrame + transform.localScale.x*0.75f))
             {
                 movementDir *= 0;
                 return;
             }
-            movementDir *= data.currentStats.speed;
+            movementDir *= speedThisFrame;
             transform.LookAt(transform.position + movementDir);
             transform.position += movementDir;
             movementDir *= 0;
