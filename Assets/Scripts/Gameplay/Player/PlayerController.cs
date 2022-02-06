@@ -1,31 +1,44 @@
 ﻿using UnityEngine;
 
-namespace GilLaburante.Gameplay
+namespace GilLaburante.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour, IHittable
     {
         public PlayerData publicData { get { return data; } }
-        public GunController gun;
+
+        [Header("Set Values")]
+        public Guns.GunController gun;
         [SerializeField] PlayerData data;
+        [Tooltip("How much time the player looks to the shoot direction without any input")]
+        [SerializeField] float lookAtDelay;
+
+        [Header("Runtime Values")]
         [SerializeField] Vector3 movementDir;
         [SerializeField] Vector3 shootDir;
+        [SerializeField] float lookAtTimer;
 
         //Unity Events
-        private void Start()
+        private void Awake()
         {
             data.currentStats = data.baseStats;
+            gun.SetActive(true);
         }
         private void Update()
         {
+            //First, look at direction (directions are reset to 0 once the action is done
+            LookAt();
+
+            //move if needed
             if (movementDir.sqrMagnitude > 0)
-            {
                 Move();
-            }
-            if (shootDir.sqrMagnitude > 0)
-            {
-                gun.Shoot();
-                shootDir *= 0;
-            }
+
+            //shoot if needed
+            if (shootDir.sqrMagnitude > 0) 
+                Shoot();
+
+            //advance look at timer
+            if (lookAtTimer > 0)
+                lookAtTimer -= Time.deltaTime;
         }
 
         //Methods
@@ -38,9 +51,27 @@ namespace GilLaburante.Gameplay
                 return;
             }
             movementDir *= speedThisFrame;
-            transform.LookAt(transform.position + movementDir);
             transform.position += movementDir;
             movementDir *= 0;
+        }
+        void Shoot()
+        {
+            gun.Shoot();
+            shootDir *= 0;
+        }
+        void LookAt()
+        {
+            if (lookAtTimer > 0)
+            {
+                if (shootDir.sqrMagnitude > 0)
+                {
+                    transform.LookAt(transform.position + shootDir);
+                }
+            }
+            else if (movementDir.sqrMagnitude > 0)
+            {
+                transform.LookAt(transform.position + movementDir);
+            }
         }
 
         //Event Receivers
@@ -51,6 +82,7 @@ namespace GilLaburante.Gameplay
         }
         public void OnNewShootDirection(Vector2 input)
         {
+            lookAtTimer = lookAtDelay;
             shootDir = new Vector3(input.x, 0, input.y);
         }
 

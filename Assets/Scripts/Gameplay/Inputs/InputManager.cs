@@ -7,7 +7,7 @@ namespace GilLaburante.Gameplay.Inputs
     {
         public Action<Vector2> MoveInputReceived;
         public Action<Vector2> ShootInputReceived;
-        [SerializeField] PlayerController player;
+        [SerializeField] Player.PlayerController player;
         [SerializeField] Vector2 moveAxisInput;
         [SerializeField] Vector2 shootAxisInput;
 
@@ -15,6 +15,13 @@ namespace GilLaburante.Gameplay.Inputs
         private void Start()
         {
             MoveInputReceived += player.OnNewMoveDirection;
+            ShootInputReceived += player.OnNewShootDirection;
+        }
+        private void OnDestroy()
+        {
+
+            MoveInputReceived -= player.OnNewMoveDirection;
+            ShootInputReceived -= player.OnNewShootDirection;
         }
 
         //Methods        

@@ -1,4 +1,4 @@
-﻿namespace GilLaburante.Gameplay
+﻿namespace GilLaburante.Gameplay.Player
 {
     [System.Serializable]
     public struct PlayerData
