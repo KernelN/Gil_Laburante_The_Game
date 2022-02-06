@@ -5,7 +5,8 @@ namespace GilLaburante.Gameplay.Inputs
 {
     public class InputManager : MonoBehaviour
     {
-        public Action<Vector2> AxisInputReceived;
+        public Action<Vector2> MoveInputReceived;
+        public Action<Vector2> ShootInputReceived;
         [SerializeField] PlayerController player;
         [SerializeField] Vector2 moveAxisInput;
         [SerializeField] Vector2 shootAxisInput;
@@ -13,7 +14,7 @@ namespace GilLaburante.Gameplay.Inputs
         //Unity Events
         private void Start()
         {
-            AxisInputReceived += player.OnNewMoveDirection;
+            MoveInputReceived += player.OnNewMoveDirection;
         }
 
         //Methods        
@@ -22,7 +23,12 @@ namespace GilLaburante.Gameplay.Inputs
         public void OnMoveInputReceived(Vector2 newInput)
         {
             moveAxisInput = newInput;
-            AxisInputReceived?.Invoke(newInput);
+            MoveInputReceived?.Invoke(newInput);
+        }
+        public void OnShootInputReceived(Vector2 newInput)
+        {
+            shootAxisInput = newInput;
+            ShootInputReceived?.Invoke(newInput);
         }
     }
 }

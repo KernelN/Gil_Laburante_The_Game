@@ -269,8 +269,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151124302}
-  - component: {fileID: 151124304}
   - component: {fileID: 151124303}
+  - component: {fileID: 151124304}
   m_Layer: 5
   m_Name: Shoot Joystick
   m_TagString: Untagged
@@ -322,9 +322,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 151124301}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63836f21ed24ddc4bba73576d2ef541e, type: 3}
+  m_Script: {fileID: 11500000, guid: f0eb6f2b54870d8498cbdc1fec52d718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   joystickHolder: {fileID: 1573527838}
@@ -717,8 +717,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797892438}
-  - component: {fileID: 797892439}
   - component: {fileID: 797892440}
+  - component: {fileID: 797892439}
   m_Layer: 5
   m_Name: Movement Joystick
   m_TagString: Untagged
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 797892437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63836f21ed24ddc4bba73576d2ef541e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c1034596f8eeec469caddae8cf05420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   joystickHolder: {fileID: 301605624}

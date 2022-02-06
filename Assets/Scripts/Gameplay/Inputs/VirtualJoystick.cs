@@ -4,24 +4,15 @@ using UnityEngine.EventSystems;
 
 namespace GilLaburante.Gameplay.Inputs
 {
-    public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerExitHandler
+    public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerExitHandler, IPointerUpHandler
     {
         public Action<Vector2> InputRecieved;
         [SerializeField] RectTransform joystickHolder;
         [SerializeField] RectTransform joystick;
-        [SerializeField] InputManager inputManager;
+        [SerializeField] internal InputManager inputManager;
         bool pointerOver;
 
-        //Unity Events
-        private void Start()
-        {
-            InputRecieved += inputManager.OnMoveInputReceived;
-            //joystick = GetComponent<RectTransform>();
-        }
-        void OnDestroy()
-        {
-            InputRecieved -= inputManager.OnMoveInputReceived;
-        }
+        //Unity Events        
         private void Update()
         {
             if (pointerOver)
@@ -81,6 +72,11 @@ namespace GilLaburante.Gameplay.Inputs
             pointerOver = true;
         }
         public void OnPointerExit(PointerEventData eventData)
+        {
+            pointerOver = false;
+            joystick.anchoredPosition *= 0; //reset pos
+        }
+        public void OnPointerUp(PointerEventData eventData)
         {
             pointerOver = false;
             joystick.anchoredPosition *= 0; //reset pos
