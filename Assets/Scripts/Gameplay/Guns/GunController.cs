@@ -51,7 +51,17 @@ namespace GilLaburante.Gameplay.Guns
             if (shootEffect)
                 Instantiate(shootEffect, shootEffectOrigin);
 
-            if (data.maxAmmo > 0) data.ammo--;
+            if (data.maxAmmo > 0) data.ammo--; //if ammo is not infinite, reduce ammo
+
+            if (data.noiseRange > 0) //if gun is not silent, alert hearers in range
+            {
+                Collider[] hearers = Physics.OverlapSphere(transform.position, data.noiseRange);
+                foreach (var hearer in hearers)
+                {
+                    hearer.GetComponent<IHearer>()?.HearNoise(transform.position, data.noiseRange);
+                }
+            }
+
             AmmoChanged.Invoke();
             data.fireTimer = 1 / data.fireRate;
             successfulShot = true;

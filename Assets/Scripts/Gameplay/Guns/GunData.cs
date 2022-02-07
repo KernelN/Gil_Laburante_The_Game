@@ -10,8 +10,9 @@ namespace GilLaburante.Gameplay.Guns
 		public LayerMask targetLayers;
 		public float reloadDuration;
 		[Tooltip("Shots per second")] public float fireRate;
-		public int damage;
 		public float range;
+		public float noiseRange;
+		public int damage;
 		public int maxBackupAmmo;
 		public int maxAmmo;
 		[Header("Current Values")]

@@ -11,15 +11,18 @@ namespace GilLaburante.Gameplay.Zombies
 
         [Header("Runtime Values")]
 		[SerializeField] ZombieController[] zombies;
+		[SerializeField] Guns.GunController playerGun;
 
         //Unity Events
         private void Start()
         {
+            //Get Gamemanager
             if(gameManager == null)
             {
                 gameManager = GameManager.Get();
             }
 
+            //Get Zombies and link actions
             zombies = zombieEmpty.GetComponentsInChildren<ZombieController>();
             for (int i = 0; i < zombies.Length; i++)
             {

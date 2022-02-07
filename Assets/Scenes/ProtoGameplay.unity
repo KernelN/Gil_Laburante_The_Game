@@ -5322,6 +5322,7 @@ MonoBehaviour:
   zombieEmpty: {fileID: 278229773}
   zombieScoreValue: 10
   zombies: []
+  playerGun: {fileID: 0}
 --- !u!1 &2048389374
 GameObject:
   m_ObjectHideFlags: 0

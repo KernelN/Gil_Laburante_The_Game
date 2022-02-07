@@ -100,8 +100,9 @@ MonoBehaviour:
       m_Bits: 768
     reloadDuration: 0
     fireRate: 4
-    damage: 1
     range: 5
+    noiseRange: 7.5
+    damage: 1
     maxBackupAmmo: 0
     maxAmmo: 0
     reloadTimer: 0

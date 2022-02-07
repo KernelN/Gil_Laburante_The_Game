@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace GilLaburante.Gameplay.Zombies
 {
-	public class ZombieController : MonoBehaviour, IHittable
+	public class ZombieController : MonoBehaviour, IHittable, IHearer
 	{
 		public ZombieData publicData { get { return data; } }
 
@@ -16,6 +16,7 @@ namespace GilLaburante.Gameplay.Zombies
 
         [Header("Runtime Values")]
 		[SerializeField] Transform target;
+		[SerializeField] Vector3 targetPos;
 		[SerializeField] float distanceToTarget;
 		[SerializeField] float attackTimer;
 
@@ -30,7 +31,6 @@ namespace GilLaburante.Gameplay.Zombies
         }
 		void Update()
         {
-            SearchForTarget();
             AttackTarget();
 
 
@@ -38,7 +38,7 @@ namespace GilLaburante.Gameplay.Zombies
             //Draw attack line
             Debug.DrawLine(transform.position, transform.position + transform.forward * data.attackRange, Color.red);
             //Draw detect area
-            //Debug.DrawLine(transform.position, transform.position + transform.forward * data.detectRange, Color.green);
+            Debug.DrawLine(transform.position + transform.forward * data.attackRange, transform.position + transform.forward * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position - transform.forward * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position + transform.right * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position - transform.right * data.detectRange, Color.green);
@@ -46,7 +46,49 @@ namespace GilLaburante.Gameplay.Zombies
         }
 
         //Methods
-        void SearchForTarget()
+        void GoToTarget()
+        {
+            transform.LookAt(targetPos);
+            navMesh.SetDestination(targetPos);
+        }
+        void AttackTarget()
+        {
+            if (attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+                return;
+            }
+
+            if (Vector3.Distance(transform.position, targetPos) > data.attackRange) return;
+            
+            RaycastHit targetHitted;
+            if (!Physics.Raycast(transform.position, transform.forward, out targetHitted, data.attackRange, data.targetLayers)) return;
+            target = targetHitted.transform;
+
+            target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
+            attackTimer = data.attackSpeed;
+        }
+
+        //Interface Implemantation
+        public void GetHitted(int damage)
+        {
+            data.currentStats.health -= damage;
+            if (data.currentStats.health <= 0)
+            {
+                Died?.Invoke();
+                Destroy(gameObject);
+            }
+        }
+        public void HearNoise(Vector3 noisePosition, float noiseRange)
+        {
+            if (Vector3.Distance(transform.position, noisePosition) > noiseRange + data.detectRange) return;
+            targetPos = noisePosition;
+            GoToTarget();
+        }
+
+
+        #region UNUSED, KEEP FOR FUTURE IMPLEMENTATION
+        void DEPRECATEDSearchForTarget()
         {
             //Search if there is any target in range
             Collider[] targetsHitted;
@@ -67,7 +109,7 @@ namespace GilLaburante.Gameplay.Zombies
                 target = null;
             }
         }
-		void GoToTarget()
+        void DEPRECATEDGoToTarget()
         {
             if (!Physics.Raycast(transform.position, target.position - transform.position, data.detectRange, data.obstacleLayers))
             {
@@ -78,33 +120,9 @@ namespace GilLaburante.Gameplay.Zombies
             }
             else
             {
-               // Debug.Log("Couldn't find target");
+                // Debug.Log("Couldn't find target");
             }
         }
-        void AttackTarget()
-        {
-            if (attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-                return;
-            }
-
-            if (target == null) return;
-            if (distanceToTarget > data.attackRange) return;
-
-            target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
-            attackTimer = data.attackSpeed;
-        }
-
-        //Interface Implemantation
-        public void GetHitted(int damage)
-        {
-            data.currentStats.health -= damage;
-            if (data.currentStats.health <= 0)
-            {
-                Died?.Invoke();
-                Destroy(gameObject);
-            }
-        }
-	}
+        #endregion 
+    }
 }

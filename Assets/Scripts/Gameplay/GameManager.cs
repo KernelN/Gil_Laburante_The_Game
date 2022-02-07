@@ -5,8 +5,6 @@ namespace GilLaburante.Gameplay
 {
 	public class GameManager : MonoBehaviourSingletonInScene<GameManager>
 	{
-        //public int publicScore { get { return score; } }
-
         public Action<int> ScoreChanged;
         
         [SerializeField] int score = 0;

@@ -48,11 +48,24 @@ namespace GilLaburante.Gameplay.Player
         void Move()
         {
             float speedThisFrame = data.currentStats.speed * Time.deltaTime;
+
+            //if there is an obstacle, don't move
             if (Physics.Raycast(transform.position, movementDir, speedThisFrame + transform.localScale.x*0.75f))
             {
                 movementDir *= 0;
                 return;
             }
+
+            //if walking is not silent, alert hearers in range
+            if (data.noiseRange > 0) 
+            {
+                Collider[] hearers = Physics.OverlapSphere(transform.position, data.noiseRange);
+                foreach (var hearer in hearers)
+                {
+                    hearer.GetComponent<IHearer>()?.HearNoise(transform.position, data.noiseRange);
+                }
+            }
+
             movementDir *= speedThisFrame;
             transform.position += movementDir;
             movementDir *= 0;
