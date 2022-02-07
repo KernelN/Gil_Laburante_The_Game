@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace GilLaburante.Gameplay.Zombies
@@ -6,6 +7,8 @@ namespace GilLaburante.Gameplay.Zombies
 	public class ZombieController : MonoBehaviour, IHittable
 	{
 		public ZombieData publicData { get { return data; } }
+
+        public Action Died;
 
 		[Header("Set Values")]
 		[SerializeField] NavMeshAgent navMesh;
@@ -35,7 +38,7 @@ namespace GilLaburante.Gameplay.Zombies
             //Draw attack line
             Debug.DrawLine(transform.position, transform.position + transform.forward * data.attackRange, Color.red);
             //Draw detect area
-            Debug.DrawLine(transform.position, transform.position + transform.forward * data.detectRange, Color.green);
+            //Debug.DrawLine(transform.position, transform.position + transform.forward * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position - transform.forward * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position + transform.right * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position - transform.right * data.detectRange, Color.green);
@@ -66,23 +69,17 @@ namespace GilLaburante.Gameplay.Zombies
         }
 		void GoToTarget()
         {
-            //if (target)
-            //{
-            //	navMesh.enabled = true;
             if (!Physics.Raycast(transform.position, target.position - transform.position, data.detectRange, data.obstacleLayers))
             {
-                Debug.Log("Target " + target.name + " found");
+                //Debug.Log("Target " + target.name + " found");
                 distanceToTarget = Vector3.Distance(transform.position, target.position);
                 transform.LookAt(target);
                 navMesh.SetDestination(target.position);
             }
             else
             {
-                Debug.Log("Couldn't find target");
+               // Debug.Log("Couldn't find target");
             }
-            //}
-            //else if (navMesh.enabled)
-            //	navMesh.enabled = false;
         }
         void AttackTarget()
         {
@@ -93,7 +90,7 @@ namespace GilLaburante.Gameplay.Zombies
             }
 
             if (target == null) return;
-            if (distanceToTarget <= data.attackRange) return;
+            if (distanceToTarget > data.attackRange) return;
 
             target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
             attackTimer = data.attackSpeed;
@@ -101,10 +98,13 @@ namespace GilLaburante.Gameplay.Zombies
 
         //Interface Implemantation
         public void GetHitted(int damage)
-		{
-			data.currentStats.health -= damage;
-			if (data.currentStats.health <= 0)
-				Destroy(gameObject);
-		}
+        {
+            data.currentStats.health -= damage;
+            if (data.currentStats.health <= 0)
+            {
+                Died?.Invoke();
+                Destroy(gameObject);
+            }
+        }
 	}
 }
