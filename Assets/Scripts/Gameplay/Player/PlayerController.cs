@@ -93,16 +93,16 @@ namespace GilLaburante.Gameplay.Player
         public void GetHitted(int damage)
         {
             data.currentStats.health -= damage;
-            HealthChanged?.Invoke();
             if (data.currentStats.health <= 0)
             {
                 data.currentStats.health = 0;
-                HealthChanged?.Invoke();
 #if UNITY_EDITOR
+                HealthChanged?.Invoke();
                 Destroy(this);
 #endif
                 Application.Quit();
             }
+            HealthChanged?.Invoke();
         }
     }
 }
