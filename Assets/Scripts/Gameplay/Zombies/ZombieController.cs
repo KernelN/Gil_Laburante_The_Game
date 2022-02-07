@@ -11,8 +11,10 @@ namespace GilLaburante.Gameplay.Zombies
 		[SerializeField] NavMeshAgent navMesh;
 		[SerializeField] ZombieData data;
 
-		[Header("Runtime Values")]
+        [Header("Runtime Values")]
 		[SerializeField] Transform target;
+		[SerializeField] float distanceToTarget;
+		[SerializeField] float attackTimer;
 
         //Unity Events
         private void Start()
@@ -25,9 +27,29 @@ namespace GilLaburante.Gameplay.Zombies
         }
 		void Update()
         {
-			Collider[] targetsHitted;
+            SearchForTarget();
+            AttackTarget();
+
+
+#if UNITY_EDITOR
+            //Draw attack line
+            Debug.DrawLine(transform.position, transform.position + transform.forward * data.attackRange, Color.red);
+            //Draw detect area
+            Debug.DrawLine(transform.position, transform.position + transform.forward * data.detectRange, Color.green);
+            Debug.DrawLine(transform.position, transform.position - transform.forward * data.detectRange, Color.green);
+            Debug.DrawLine(transform.position, transform.position + transform.right * data.detectRange, Color.green);
+            Debug.DrawLine(transform.position, transform.position - transform.right * data.detectRange, Color.green);
+#endif
+        }
+
+        //Methods
+        void SearchForTarget()
+        {
+            //Search if there is any target in range
+            Collider[] targetsHitted;
             targetsHitted = Physics.OverlapSphere(transform.position, data.detectRange, data.targetLayers);
 
+            //If there are, update target transform
             if (targetsHitted.Length > 0)
             {
                 if (target != targetsHitted[0].transform)
@@ -35,29 +57,46 @@ namespace GilLaburante.Gameplay.Zombies
                     target = targetsHitted[0].transform;
                 }
 
-                navMesh.SetDestination(target.position);
-				UpdateTarget();
-			}
-            else if (target)
+                GoToTarget();
+            }
+            else if (target) //if not, clear target transform
             {
-				target = null;
+                target = null;
             }
         }
-
-        //Methods
-		void UpdateTarget()
+		void GoToTarget()
         {
             //if (target)
             //{
             //	navMesh.enabled = true;
-            if (Physics.Raycast(transform.position, target.position - transform.position))
+            if (!Physics.Raycast(transform.position, target.position - transform.position, data.detectRange, data.obstacleLayers))
             {
+                Debug.Log("Target " + target.name + " found");
+                distanceToTarget = Vector3.Distance(transform.position, target.position);
                 transform.LookAt(target);
                 navMesh.SetDestination(target.position);
+            }
+            else
+            {
+                Debug.Log("Couldn't find target");
             }
             //}
             //else if (navMesh.enabled)
             //	navMesh.enabled = false;
+        }
+        void AttackTarget()
+        {
+            if (attackTimer > 0)
+            {
+                attackTimer -= Time.deltaTime;
+                return;
+            }
+
+            if (target == null) return;
+            if (distanceToTarget <= data.attackRange) return;
+
+            target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
+            attackTimer = data.attackSpeed;
         }
 
         //Interface Implemantation
