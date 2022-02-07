@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace GilLaburante.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour, IHittable
     {
         public PlayerData publicData { get { return data; } }
+
+        public Action HealthChanged;
 
         [Header("Set Values")]
         public Guns.GunController gun;
@@ -93,8 +96,13 @@ namespace GilLaburante.Gameplay.Player
             if (data.currentStats.health <= 0)
             {
                 data.currentStats.health = 0;
+#if UNITY_EDITOR
+                HealthChanged?.Invoke();
+                Destroy(this);
+#endif
                 Application.Quit();
             }
+            HealthChanged?.Invoke();
         }
     }
 }
