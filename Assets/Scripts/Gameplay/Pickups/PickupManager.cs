@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace GilLaburante.Gameplay.Pickups
 {
@@ -6,16 +7,18 @@ namespace GilLaburante.Gameplay.Pickups
 	{
 		[SerializeField] Player.PlayerController player;
 		[SerializeField] PickupController[] pickups;
+		[SerializeField] List<PickupController> ammoPickups;
 		[SerializeField] GameObject pickupsEmpty;
 
         //Unity Events
-        private void Start()
+        private void Awake()
         {
-            //Get player
+            //Get player and link actions
             if (player == null)
             {
                 player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player.PlayerController>();
             }
+            player.BackupAmmoChanged += OnPlayerBackupAmmoChanged;
 
             //Link pickup actions
             pickups = pickupsEmpty.GetComponentsInChildren<PickupController>();
@@ -23,6 +26,14 @@ namespace GilLaburante.Gameplay.Pickups
             {
                 pickups[i].name = pickups[i].publicData.type.ToString() + " pickup " + (i + 1); 
                 pickups[i].PickedUp += OnPickupPickedUp;
+                switch (pickups[i].publicData.type)
+                {
+                    case PickupType.ammo:
+                        ammoPickups.Add(pickups[i]);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -38,6 +49,14 @@ namespace GilLaburante.Gameplay.Pickups
                     break;
                 default:
                     break;
+            }
+        }
+        void OnPlayerBackupAmmoChanged(bool hasMaxAmmo)
+        {
+            Debug.Log("Player has max ammo?" + hasMaxAmmo);
+            foreach (var ammoPickup in ammoPickups)
+            {
+                ammoPickup.EnablePickup(!hasMaxAmmo);
             }
         }
 	}

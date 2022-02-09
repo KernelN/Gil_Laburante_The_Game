@@ -8,6 +8,7 @@ namespace GilLaburante.Gameplay.Player
         public PlayerData publicData { get { return data; } }
 
         public Action HealthChanged;
+        public Action<bool> BackupAmmoChanged;
         public Action Died;
 
         [Header("Set Values")]
@@ -20,12 +21,18 @@ namespace GilLaburante.Gameplay.Player
         [SerializeField] Vector3 movementDir;
         [SerializeField] Vector3 shootDir;
         [SerializeField] float lookAtTimer;
+        bool hasMaxAmmo;
 
         //Unity Events
         private void Awake()
         {
             data.currentStats = data.baseStats;
             gun.SetActive(true);
+        }
+        void Start()
+        {
+            gun.AmmoChanged += OnAmmoChanged;
+            OnAmmoChanged();
         }
         private void Update()
         {
@@ -105,6 +112,13 @@ namespace GilLaburante.Gameplay.Player
         {
             lookAtTimer = lookAtDelay;
             shootDir = new Vector3(input.x, 0, input.y);
+        }
+        void OnAmmoChanged()
+        {
+            bool hasMax = gun.publicData.backupAmmo >= gun.publicData.maxBackupAmmo;
+            if (hasMaxAmmo == hasMax) return;
+            hasMaxAmmo = hasMax;
+            BackupAmmoChanged?.Invoke(hasMaxAmmo);
         }
 
         //Interface Implementations
