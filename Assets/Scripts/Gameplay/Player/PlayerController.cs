@@ -46,6 +46,10 @@ namespace GilLaburante.Gameplay.Player
         }
 
         //Methods
+        public void RechargeWeapon(int ammo)
+        {
+            gun.AddAmmo(ammo);
+        }
         void Move()
         {
             float speedThisFrame = data.currentStats.speed * Time.deltaTime;

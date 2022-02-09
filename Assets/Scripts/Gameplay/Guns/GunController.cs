@@ -81,6 +81,19 @@ namespace GilLaburante.Gameplay.Guns
                 data.reloadTimer = data.reloadDuration;
             AmmoChanged?.Invoke();
         }
+        public void AddAmmo(int ammo)
+        {
+            if (ammo > 0)
+            {
+                data.backupAmmo += ammo; //if ammo is not negative, add ammo
+
+                //If backup ammo is bigger that max, set as max
+                if (data.backupAmmo > data.maxBackupAmmo)
+                    data.backupAmmo = data.maxBackupAmmo;
+
+                AmmoChanged?.Invoke();
+            }
+        }
         void AdvanceCooldown()
         {
             data.reloadTimer -= Time.deltaTime;
