@@ -53,18 +53,26 @@ namespace GilLaburante.Gameplay.Zombies
         }
         void AttackTarget()
         {
+            //Check attack timer
             if (attackTimer > 0)
             {
                 attackTimer -= Time.deltaTime;
                 return;
             }
 
-            if (Vector3.Distance(transform.position, targetPos) > data.attackRange) return;
-            
+            //Check distance with target noise
+            distanceToTarget = Vector3.Distance(transform.position, targetPos);
+            if (distanceToTarget > data.attackRange) return;
+
+            //Look at target noise with ALL rotations are fixed
+            transform.LookAt(targetPos);
+
+            //Try to update target
             RaycastHit targetHitted;
             if (!Physics.Raycast(transform.position, transform.forward, out targetHitted, data.attackRange, data.targetLayers)) return;
             target = targetHitted.transform;
 
+            //Hit target
             target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
             attackTimer = data.attackSpeed;
         }
@@ -81,7 +89,8 @@ namespace GilLaburante.Gameplay.Zombies
         }
         public void HearNoise(Vector3 noisePosition, float noiseRange)
         {
-            if (Vector3.Distance(transform.position, noisePosition) > noiseRange + data.detectRange) return;
+            distanceToTarget = Vector3.Distance(transform.position, noisePosition);
+            if (distanceToTarget > noiseRange + data.detectRange) return;
             targetPos = noisePosition;
             GoToTarget();
         }
