@@ -4128,6 +4128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   pickups: []
+  ammoPickups: []
   pickupsEmpty: {fileID: 234938450}
 --- !u!1 &1057551584
 GameObject:
