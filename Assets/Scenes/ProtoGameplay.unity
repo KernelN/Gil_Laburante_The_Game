@@ -6182,7 +6182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80714e39962c4d541a0c512343055887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieEmpty: {fileID: 278229773}
+  zombiesEmpty: {fileID: 278229773}
   numberOfZombies: 0
 --- !u!1001 &2043110013
 PrefabInstance:

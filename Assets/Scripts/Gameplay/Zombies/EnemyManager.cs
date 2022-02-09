@@ -2,13 +2,13 @@
 
 namespace GilLaburante.Gameplay.Zombies
 {
-	public class EnemyManager : MonoBehaviourSingletonInScene<GameplayManager>
+	public class EnemyManager : MonoBehaviourSingletonInScene<EnemyManager>
     {
         public System.Action ZombieDied;
         public System.Action AllZombiesDied;
 
         [Header("Set Values")]
-		[SerializeField] GameObject zombieEmpty;
+		[SerializeField] GameObject zombiesEmpty;
 
         [Header("Runtime Values")]
         [SerializeField] int numberOfZombies;
@@ -17,7 +17,7 @@ namespace GilLaburante.Gameplay.Zombies
         private void Start()
         {
             //Get Zombies and link actions
-            ZombieController[] zombies = zombieEmpty.GetComponentsInChildren<ZombieController>();
+            ZombieController[] zombies = zombiesEmpty.GetComponentsInChildren<ZombieController>();
             numberOfZombies = zombies.Length;
             for (int i = 0; i < zombies.Length; i++)
             {
