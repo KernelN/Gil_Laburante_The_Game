@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2940480002440237826}
-  - component: {fileID: 2940480002440237836}
   - component: {fileID: 2940480002440237827}
   m_Layer: 5
   m_Name: Movement Joystick
@@ -25,36 +24,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2940480002440237825}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2940480002478829228}
-  - {fileID: 2940480003920609740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 83.11864, y: 83.365616}
-  m_SizeDelta: {x: 166.23727, y: 166.73123}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.000091553}
+  m_SizeDelta: {x: 166.23727, y: 313.99985}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!58 &2940480002440237836
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2940480002440237825}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.0116272, y: 0}
-  serializedVersion: 2
-  m_Radius: 72.32413
 --- !u!114 &2940480002440237827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1034596f8eeec469caddae8cf05420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickHolder: {fileID: 2940480002478829228}
-  joystick: {fileID: 2940480003920609740}
+  handleRange: 1
+  deadZone: 0
+  axisOptions: 0
+  snapX: 0
+  snapY: 0
+  background: {fileID: 2940480002478829228}
+  handle: {fileID: 2940480003920609740}
+  moveThreshold: 1
+  joystickType: 0
   inputManager: {fileID: 0}
 --- !u!1 &2940480002478829219
 GameObject:
@@ -98,14 +87,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2940480003920609740}
   m_Father: {fileID: 2940480002440237826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 166.73485, y: 166.73485}
+  m_SizeDelta: {x: 166.73485, y: 167.73485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2940480002478829230
 CanvasRenderer:
@@ -173,13 +163,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.29602, y: 0.29602, z: 0.29602}
   m_Children: []
-  m_Father: {fileID: 2940480002440237826}
-  m_RootOrder: 1
+  m_Father: {fileID: 2940480002478829228}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 166.73485, y: 166.73485}
+  m_SizeDelta: {x: 166, y: 168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2940480003920609742
 CanvasRenderer:

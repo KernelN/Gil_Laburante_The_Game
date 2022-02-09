@@ -3,7 +3,7 @@
     public class ShootJoystick : VirtualJoystick
     {
         //Unity Events
-        private void Start()
+        private void Awake()
         {
             InputRecieved += inputManager.OnShootInputReceived;
         }
