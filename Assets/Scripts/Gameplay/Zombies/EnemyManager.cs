@@ -2,28 +2,23 @@
 
 namespace GilLaburante.Gameplay.Zombies
 {
-	public class EnemyManager : MonoBehaviour
-	{
+	public class EnemyManager : MonoBehaviourSingletonInScene<GameplayManager>
+    {
+        public System.Action ZombieDied;
+        public System.Action AllZombiesDied;
+
         [Header("Set Values")]
-		[SerializeField] GameManager gameManager;
 		[SerializeField] GameObject zombieEmpty;
-        [SerializeField] int zombieScoreValue;
 
         [Header("Runtime Values")]
-		[SerializeField] ZombieController[] zombies;
-		[SerializeField] Guns.GunController playerGun;
+        [SerializeField] int numberOfZombies;
 
         //Unity Events
         private void Start()
         {
-            //Get Gamemanager
-            if(gameManager == null)
-            {
-                gameManager = GameManager.Get();
-            }
-
             //Get Zombies and link actions
-            zombies = zombieEmpty.GetComponentsInChildren<ZombieController>();
+            ZombieController[] zombies = zombieEmpty.GetComponentsInChildren<ZombieController>();
+            numberOfZombies = zombies.Length;
             for (int i = 0; i < zombies.Length; i++)
             {
                 zombies[i].gameObject.name = "Zombie " + (i + 1);
@@ -36,7 +31,12 @@ namespace GilLaburante.Gameplay.Zombies
         //Event Receivers
         void OnZombieDeath()
         {
-            gameManager.AddScore(zombieScoreValue);
+            ZombieDied?.Invoke();
+            numberOfZombies--;
+            if (numberOfZombies <= 0)
+            {
+                AllZombiesDied?.Invoke();
+            }
         }
     }
 }
