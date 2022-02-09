@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7007697225758838747}
-  - component: {fileID: 7007697225758838746}
   - component: {fileID: 7007697225758838725}
   m_Layer: 5
   m_Name: Shoot Joystick
@@ -30,31 +29,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7007697226618328971}
-  - {fileID: 7007697226858289506}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -83.11865, y: 83.365616}
-  m_SizeDelta: {x: 166.2373, y: 166.73123}
+  m_AnchoredPosition: {x: -83.11865, y: 157}
+  m_SizeDelta: {x: 166.2373, y: 314}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!58 &7007697225758838746
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007697225758838744}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.0116272, y: 0}
-  serializedVersion: 2
-  m_Radius: 72.32413
 --- !u!114 &7007697225758838725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,8 +49,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0eb6f2b54870d8498cbdc1fec52d718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickHolder: {fileID: 7007697226618328971}
-  joystick: {fileID: 7007697226858289506}
+  handleRange: 1
+  deadZone: 0
+  axisOptions: 0
+  snapX: 0
+  snapY: 0
+  background: {fileID: 7007697226618328971}
+  handle: {fileID: 7007697226858289506}
+  moveThreshold: 1
+  joystickType: 0
   inputManager: {fileID: 0}
 --- !u!1 &7007697226618328968
 GameObject:
@@ -98,7 +87,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7007697226858289506}
   m_Father: {fileID: 7007697225758838747}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,8 +163,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.29602, y: 0.29602, z: 0.29602}
   m_Children: []
-  m_Father: {fileID: 7007697225758838747}
-  m_RootOrder: 1
+  m_Father: {fileID: 7007697226618328971}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
