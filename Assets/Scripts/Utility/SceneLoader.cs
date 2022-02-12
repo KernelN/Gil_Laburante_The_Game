@@ -1,32 +1,44 @@
 ﻿using UnityEngine.SceneManagement;
 
-public static class SceneLoader
+namespace Universal.SceneManaging
 {
-    [System.Serializable] public enum Scenes { proto }
-    public static Scenes GetCurrentScene()
-    {
-        Scene currentScene = SceneManager.GetActiveScene();
-        switch (currentScene.name)
+    public static class SceneLoader
+    {        
+        public static Scenes GetCurrentScene()
         {
-            case "ProtoGameplay":
-                return Scenes.proto;
-            default:
-                return Scenes.proto;
+            Scene currentScene = SceneManager.GetActiveScene();
+            switch (currentScene.name)
+            {
+                case "ProtoGameplay":
+                    return Scenes.proto;
+                case "Menu":
+                    return Scenes.menu;
+                case "Credits":
+                    return Scenes.credits;
+                default:
+                    return Scenes.menu;
+            }
         }
-    }
-    public static void LoadScene(Scenes sceneToLoad)
-    {
-        string sceneName = "ProtoGameplay";
-
-        switch (sceneToLoad)
+        public static void LoadScene(Scenes sceneToLoad)
         {
-            case Scenes.proto:
-                sceneName = "ProtoGameplay";
-                break;
-            default:
-                break;
-        }
+            string sceneName = "ProtoGameplay";
 
-        ASyncSceneLoader.Get().StartLoad(sceneName);
+            switch (sceneToLoad)
+            {
+                case Scenes.proto:
+                    sceneName = "ProtoGameplay";
+                    break;
+                case Scenes.menu:
+                    sceneName = "Menu";
+                    break;
+                case Scenes.credits:
+                    sceneName = "Credits";
+                    break;
+                default:
+                    break;
+            }
+
+            ASyncSceneLoader.Get().StartLoad(sceneName);
+        }
     }
 }

@@ -2903,8 +2903,38 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1391302948}
+    m_TransformParent: {fileID: 1849442183}
     m_Modifications:
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1849442185}
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Universal.SceneManaging.SceneGetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1849442185}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Universal.SceneManaging.SceneGetter, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2918,7 +2948,7 @@ PrefabInstance:
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -2973,17 +3003,17 @@ PrefabInstance:
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -3013,7 +3043,12 @@ PrefabInstance:
     - target: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_Name
-      value: Game Over - Panel
+      value: Victory - Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375610645631, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -3300,6 +3335,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 126692284275961055, guid: fefa2559f7e93e146a4db46a6d7e5ddc,
     type: 3}
   m_PrefabInstance: {fileID: 898940413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899221549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8897108375774559885}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &904179356 stripped
 Transform:
@@ -4458,6 +4499,12 @@ MonoBehaviour:
   player: {fileID: 328351024}
   followRangeZ: {x: 4, y: 5}
   followRangeX: 3
+--- !u!1 &1242680584 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
+    type: 3}
+  m_PrefabInstance: {fileID: 851761425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1255618459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4774,42 +4821,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1365337726}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1391302947
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1391302948}
-  m_Layer: 5
-  m_Name: Victory Screen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1391302948
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391302947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 851761426}
-  m_Father: {fileID: 1849442183}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1417319867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5646,8 +5657,8 @@ RectTransform:
   m_Children:
   - {fileID: 1874190258}
   - {fileID: 243750394}
-  - {fileID: 1391302948}
-  - {fileID: 2070158275}
+  - {fileID: 851761426}
+  - {fileID: 1756567843}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5670,8 +5681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 257911233}
   gameplayScreen: {fileID: 243750393}
-  victoryScreen: {fileID: 1391302947}
-  defeatScreen: {fileID: 2070158274}
+  victoryScreen: {fileID: 1242680584}
+  defeatScreen: {fileID: 899221549}
   scorePositionInDefeat: {fileID: 1307542499}
   scorePositionInVictory: {fileID: 1307542499}
   scoreText: {fileID: 1874190259}
@@ -6293,42 +6304,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2070158274
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2070158275}
-  m_Layer: 5
-  m_Name: Defeat Screen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2070158275
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070158274}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1756567843}
-  m_Father: {fileID: 1849442183}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2076594674
 GameObject:
   m_ObjectHideFlags: 0
@@ -7450,8 +7425,38 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2070158275}
+    m_TransformParent: {fileID: 1849442183}
     m_Modifications:
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1849442185}
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989161804245124845, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Universal.SceneManaging.SceneGetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1849442185}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020663719853216986, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Universal.SceneManaging.SceneGetter, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_Pivot.x
@@ -7465,7 +7470,7 @@ PrefabInstance:
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375108773806, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
@@ -7560,7 +7565,12 @@ PrefabInstance:
     - target: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}
       propertyPath: m_Name
-      value: Game Over - Panel
+      value: Defeat - Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897108375108773807, guid: af4c4175ba05c494e9210ca74c8b3185,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897108375610645631, guid: af4c4175ba05c494e9210ca74c8b3185,
         type: 3}

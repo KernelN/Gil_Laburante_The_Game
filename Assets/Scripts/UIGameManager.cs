@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 
-public class UIGameManager : MonoBehaviour
+namespace GilLaburante
 {
-    GameManager gameManager;
+    public class UIGameManager : MonoBehaviour
+    {
+        GameManager gameManager;
 
-    private void Start()
-    {
-        gameManager = GameManager.Get();
-    }
+        private void Start()
+        {
+            gameManager = GameManager.Get();
+        }
 
-    public void LoadScene(int sceneEnumNumber)
-    {
-        gameManager.LoadScene(sceneEnumNumber);
-    }
-    public void QuitGame()
-    {
-        gameManager.QuitGame();
+        public void LoadScene(Universal.SceneManaging.SceneGetter sceneGetter)
+        {
+            gameManager.LoadScene(sceneGetter.scene);
+        }
+        public void QuitGame()
+        {
+            gameManager.QuitGame();
+        }
     }
 }

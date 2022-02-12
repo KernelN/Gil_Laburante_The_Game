@@ -2,44 +2,47 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ASyncSceneLoader : MonoBehaviourSingleton<ASyncSceneLoader>
+namespace Universal.SceneManaging
 {
-    public float loadingProgress { get { return asyncLoad.progress; } }
-    public bool sceneIsLoading { get { return !loadIsDone; } }
-    [SerializeField] float minLoadSeconds;
-    AsyncOperation asyncLoad;
-    string sceneLoading;
-    bool loadIsDone;
-
-    //Unity Events
-    public void StartLoad(string sceneToLoad)
+    public class ASyncSceneLoader : MonoBehaviourSingleton<ASyncSceneLoader>
     {
-        sceneLoading = sceneToLoad;
-        SceneManager.LoadScene("Load Scene");
-        StartCoroutine(LoadAsyncScene());
-    }
+        public float loadingProgress { get { return asyncLoad.progress; } }
+        public bool sceneIsLoading { get { return !loadIsDone; } }
+        public string sceneLoading { get; private set; }
+        [SerializeField] float minLoadSeconds;
+        AsyncOperation asyncLoad;
+        bool loadIsDone;
 
-    //Methods
-    IEnumerator LoadAsyncScene()
-    {
-        //The Application loads the Scene in the background as the current Scene runs.
-        //asyncLoad = SceneManager.LoadSceneAsync(sceneLoading, LoadSceneMode.Additive);
-        //asyncLoad.allowSceneActivation = false;
-
-        //Set timer
-        float timer = minLoadSeconds;
-
-        // Wait until the asynchronous scene fully loads
-        do
+        //Unity Events
+        public void StartLoad(string sceneToLoad)
         {
-            timer -= Time.deltaTime;
-            yield return null;
-        } while (/*asyncLoad.progress < 0.9f || */timer > 0);
+            sceneLoading = sceneToLoad;
+            SceneManager.LoadScene("Load Scene");
+            StartCoroutine(LoadAsyncScene());
+        }
+
+        //Methods
+        IEnumerator LoadAsyncScene()
+        {
+            //The Application loads the Scene in the background as the current Scene runs.
+            //asyncLoad = SceneManager.LoadSceneAsync(sceneLoading, LoadSceneMode.Additive);
+            //asyncLoad.allowSceneActivation = false;
+
+            //Set timer
+            float timer = minLoadSeconds;
+
+            // Wait until the asynchronous scene fully loads
+            do
+            {
+                timer -= Time.deltaTime;
+                yield return null;
+            } while (/*asyncLoad.progress < 0.9f || */timer > 0);
 
 
-        //asyncLoad.allowSceneActivation = true;
-        //SceneManager.UnloadSceneAsync("Load Scene");
-        SceneManager.LoadScene(sceneLoading);
-        yield break;
+            //asyncLoad.allowSceneActivation = true;
+            //SceneManager.UnloadSceneAsync("Load Scene");
+            SceneManager.LoadScene(sceneLoading);
+            yield break;
+        }
     }
 }
