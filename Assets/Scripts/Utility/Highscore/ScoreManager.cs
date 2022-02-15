@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Universal.Highscore
 {
-    [System.Serializable]
+    [Serializable]
     public class HighscoresTable { public List<Highscore> table; }
 
     public class ScoreManager : MonoBehaviourSingleton<ScoreManager>

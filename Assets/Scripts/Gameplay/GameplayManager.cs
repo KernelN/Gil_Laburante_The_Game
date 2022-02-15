@@ -3,16 +3,26 @@ using UnityEngine;
 
 namespace GilLaburante.Gameplay
 {
-	public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>
+    [Serializable] public enum GameState { ingame, pause, gameOver }
+    public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>
 	{
-        public Action PlayerWon;
-        public Action PlayerLost;
+        public GameState publicGameState 
+        { 
+            get { return gameState; }
+            private set { gameState = value; GameStateChanged?.Invoke(); }
+        }
+        public bool publicPlayerWon { get { return playerWon; } }
+
+        public Action GameStateChanged;
 
         [Header("Set Values")]
         [SerializeField] Universal.Highscore.ScoreManager highscoreManager;
         [SerializeField] Zombies.EnemyManager enemyManager;
         [SerializeField] Player.PlayerController player;
         [SerializeField] int zombieScoreValue;
+        [Header("Runtime Values")]
+        [SerializeField] GameState gameState = GameState.ingame;
+        [SerializeField] bool playerWon;
 
         //Unity Events
         private void Start()
@@ -34,15 +44,8 @@ namespace GilLaburante.Gameplay
         void EndGame(bool playerWon)
         {
             Time.timeScale = 0;
-
-            if (playerWon)
-            {
-                PlayerWon?.Invoke();
-            }
-            else
-            {
-                PlayerLost?.Invoke();
-            }
+            this.playerWon = playerWon;
+            publicGameState = GameState.gameOver;
         }
 
         //Event Receivers

@@ -4,13 +4,14 @@ using TMPro;
 namespace GilLaburante.Gameplay.UI
 {
 	public class UIGameplayManager : MonoBehaviour
-	{
-        [System.Serializable] enum GameState { ingame, gameOver }
-        
+	{        
+        [Header("Set Values")]
         [SerializeField] GameplayManager gameManager;
         [SerializeField] GameObject gameplayScreen;
         [SerializeField] GameObject gameOverScreen;
-        [SerializeField] GameState gameState = GameState.ingame;
+        [SerializeField] TextMeshProUGUI gameOverTitle;
+        [SerializeField] string victoryMessage = "You Win!";
+        [SerializeField] string defeatMessage = "You Lost";
 
         //Unity Methods
         private void Start()
@@ -22,9 +23,7 @@ namespace GilLaburante.Gameplay.UI
             }
 
             //Set game state
-            gameManager.PlayerLost += OnPlayerLost;
-            gameManager.PlayerWon += OnPlayerWon;
-            gameState = GameState.ingame;
+            gameManager.GameStateChanged += OnNewGameState;
             SetGameScreens();
         }
 
@@ -33,12 +32,13 @@ namespace GilLaburante.Gameplay.UI
         {
             gameplayScreen.SetActive(false);
             gameOverScreen.SetActive(false);
-            switch (gameState)
+            switch (gameManager.publicGameState)
             {
                 case GameState.ingame:
                     gameplayScreen.SetActive(true);
                     break;
                 case GameState.gameOver:
+                    gameOverTitle.text = gameManager.publicPlayerWon ? victoryMessage : defeatMessage;
                     gameOverScreen.SetActive(true);
                     break;
                 default:
@@ -47,14 +47,8 @@ namespace GilLaburante.Gameplay.UI
         }
 
         //Event Receivers
-        void OnPlayerLost()
+        void OnNewGameState()
         {
-            gameState = GameState.gameOver;
-            SetGameScreens();
-        }
-        void OnPlayerWon()
-        {
-            gameState = GameState.gameOver;
             SetGameScreens();
         }
     }

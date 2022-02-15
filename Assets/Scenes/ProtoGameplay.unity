@@ -979,6 +979,8 @@ MonoBehaviour:
   enemyManager: {fileID: 1989092928}
   player: {fileID: 328351025}
   zombieScoreValue: 10
+  gameState: 0
+  playerWon: 0
 --- !u!1 &269176123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,6 +3085,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &851761430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8897108376094870933, guid: af4c4175ba05c494e9210ca74c8b3185,
+    type: 3}
+  m_PrefabInstance: {fileID: 851761425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &875648566
@@ -5665,7 +5679,9 @@ MonoBehaviour:
   gameManager: {fileID: 257911233}
   gameplayScreen: {fileID: 243750393}
   gameOverScreen: {fileID: 1242680584}
-  gameState: 0
+  gameOverTitle: {fileID: 851761430}
+  victoryMessage: You Win!
+  defeatMessage: You Lost
 --- !u!114 &1849442185
 MonoBehaviour:
   m_ObjectHideFlags: 0
