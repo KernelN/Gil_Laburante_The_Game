@@ -13,6 +13,8 @@ namespace Universal.SceneManaging
                     return Scenes.proto;
                 case "Menu":
                     return Scenes.menu;
+                case "Highscores":
+                    return Scenes.menu;
                 case "Credits":
                     return Scenes.credits;
                 default:
@@ -30,6 +32,9 @@ namespace Universal.SceneManaging
                     break;
                 case Scenes.menu:
                     sceneName = "Menu";
+                    break;
+                case Scenes.highscores:
+                    sceneName = "Highscores";
                     break;
                 case Scenes.credits:
                     sceneName = "Credits";

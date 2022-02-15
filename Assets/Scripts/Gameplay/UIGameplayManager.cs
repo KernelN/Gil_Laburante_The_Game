@@ -5,15 +5,11 @@ namespace GilLaburante.Gameplay.UI
 {
 	public class UIGameplayManager : MonoBehaviour
 	{
-        [System.Serializable] enum GameState { ingame, victory, defeat }
+        [System.Serializable] enum GameState { ingame, gameOver }
         
         [SerializeField] GameplayManager gameManager;
         [SerializeField] GameObject gameplayScreen;
-        [SerializeField] GameObject victoryScreen;
-        [SerializeField] GameObject defeatScreen;
-        [SerializeField] Transform scorePositionInDefeat;
-        [SerializeField] Transform scorePositionInVictory;
-        [SerializeField] TextMeshProUGUI scoreText;
+        [SerializeField] GameObject gameOverScreen;
         [SerializeField] GameState gameState = GameState.ingame;
 
         //Unity Methods
@@ -30,30 +26,20 @@ namespace GilLaburante.Gameplay.UI
             gameManager.PlayerWon += OnPlayerWon;
             gameState = GameState.ingame;
             SetGameScreens();
-
-            //Set score
-            gameManager.ScoreChanged += OnScoreChanged;
-            OnScoreChanged(0);
         }
 
         //Methods
         void SetGameScreens()
         {
             gameplayScreen.SetActive(false);
-            victoryScreen.SetActive(false);
-            defeatScreen.SetActive(false);
+            gameOverScreen.SetActive(false);
             switch (gameState)
             {
                 case GameState.ingame:
                     gameplayScreen.SetActive(true);
                     break;
-                case GameState.victory:
-                    victoryScreen.SetActive(true);
-                    scoreText.transform.position = scorePositionInVictory.position;
-                    break;
-                case GameState.defeat:
-                    defeatScreen.SetActive(true);
-                    scoreText.transform.position = scorePositionInDefeat.position;
+                case GameState.gameOver:
+                    gameOverScreen.SetActive(true);
                     break;
                 default:
                     break;
@@ -61,18 +47,14 @@ namespace GilLaburante.Gameplay.UI
         }
 
         //Event Receivers
-        void OnScoreChanged(int score)
-        {
-            scoreText.text = score.ToString("D4");
-        }
         void OnPlayerLost()
         {
-            gameState = GameState.defeat;
+            gameState = GameState.gameOver;
             SetGameScreens();
         }
         void OnPlayerWon()
         {
-            gameState = GameState.victory;
+            gameState = GameState.gameOver;
             SetGameScreens();
         }
     }

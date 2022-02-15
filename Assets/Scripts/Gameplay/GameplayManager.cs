@@ -5,21 +5,20 @@ namespace GilLaburante.Gameplay
 {
 	public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>
 	{
-        public Action<int> ScoreChanged;
         public Action PlayerWon;
         public Action PlayerLost;
-        
+
         [Header("Set Values")]
+        [SerializeField] Universal.Highscore.ScoreManager highscoreManager;
         [SerializeField] Zombies.EnemyManager enemyManager;
         [SerializeField] Player.PlayerController player;
         [SerializeField] int zombieScoreValue;
 
-        [Header("Runtime Values")]
-        [SerializeField] int score = 0;
-
         //Unity Events
         private void Start()
         {
+            highscoreManager = Universal.Highscore.ScoreManager.Get();
+
             enemyManager.ZombieDied += OnZombieDeath;
             enemyManager.AllZombiesDied += OnAllZombiesDied;
             player.Died += OnPlayerDeath;
@@ -28,12 +27,9 @@ namespace GilLaburante.Gameplay
         //Methods
         void AddScore(int newScore)
         {
-            //Debug.Log(score);
-            score += newScore;
-            //Debug.Log(score);
-            if (score < 0) score = 0;
-            if (score > 9999) score = 9999;
-            ScoreChanged?.Invoke(score);
+            //Debug.Log(highscoreManager.score);
+            highscoreManager.score += newScore;
+            //Debug.Log(highscoreManager.score);
         }
         void EndGame(bool playerWon)
         {

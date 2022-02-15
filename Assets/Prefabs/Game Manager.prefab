@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 43739211142894522}
   - component: {fileID: 43739211142894523}
   - component: {fileID: 6645520315626216323}
+  - component: {fileID: 4535824478285347520}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -58,3 +59,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minLoadSeconds: 2
+--- !u!114 &4535824478285347520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43739211142894525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea34df175446e2047a246d9358936f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScore: 0
+  maxScore: 9999
+  highscoreTable:
+    table: []
+  currentScore:
+    score: 0
+    name: 

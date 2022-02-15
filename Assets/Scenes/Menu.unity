@@ -271,27 +271,27 @@ PrefabInstance:
     - target: {fileID: 1603777450530113120, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: scene
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1603777450530113122, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5471698
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1603777450530113122, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.5471698
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1603777450530113122, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.5471698
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1603777450530113123, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1603777450530113123, guid: 286ae1e73a3cd744fbd561a17d74b7bd,
         type: 3}

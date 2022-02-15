@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.010926722, g: 0.5754717, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -540,8 +540,8 @@ GameObject:
   - component: {fileID: 667678551}
   - component: {fileID: 667678550}
   - component: {fileID: 667678549}
-  - component: {fileID: 667678548}
   - component: {fileID: 667678553}
+  - component: {fileID: 667678548}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -558,9 +558,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 667678547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 321ec0fa9cf1d4c4585b321b70573135, type: 3}
+  m_Script: {fileID: 11500000, guid: 02846d6af6a69e24f93c01201f926724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highscoreTexts: {fileID: 1281864062}
 --- !u!114 &667678549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,10 +654,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 667678547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cbfbd3df6c820f41930a4bf1782541e, type: 3}
+  m_Script: {fileID: 11500000, guid: df51d01395143324a902af46175b72a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highscoreTexts: {fileID: 1281864062}
 --- !u!1 &818282157
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 818282161}
   - component: {fileID: 818282160}
   - component: {fileID: 818282159}
+  - component: {fileID: 818282162}
   m_Layer: 5
   m_Name: Exit  - Button
   m_TagString: Untagged
@@ -739,12 +740,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 667678548}
-        m_MethodName: LoadMenu
-        m_Mode: 1
+      - m_Target: {fileID: 667678553}
+        m_MethodName: LoadScene
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 818282162}
+          m_ObjectArgumentAssemblyTypeName: Universal.SceneManaging.SceneGetter,
+            Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -787,6 +789,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818282157}
   m_CullTransparentMesh: 0
+--- !u!114 &818282162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818282157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05de01ad79c06344791d486c50ff81b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 1
 --- !u!1 &823096667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,14 +1339,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 10
+  m_fontSizeMin: 20
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1633,7 +1648,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
