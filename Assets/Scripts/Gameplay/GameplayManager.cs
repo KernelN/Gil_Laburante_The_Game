@@ -16,21 +16,24 @@ namespace GilLaburante.Gameplay
         public Action GameStateChanged;
 
         [Header("Set Values")]
-        [SerializeField] Universal.Highscore.ScoreManager highscoreManager;
+        [SerializeField] Universal.Highscore.ScoreManager scoreManager;
         [SerializeField] Zombies.EnemyManager enemyManager;
         [SerializeField] Player.PlayerController player;
+        [Tooltip("How much time in minutes the game will last")]
+        [SerializeField] float gameDuration = 5;
         [SerializeField] int zombieScoreValue;
         [Header("Runtime Values")]
         [SerializeField] GameState gameState = GameState.ingame;
+        [SerializeField] float gameTimer;
         [SerializeField] bool playerWon;
 
         //Unity Events
         private void Start()
         {
-            highscoreManager = Universal.Highscore.ScoreManager.Get();
+            scoreManager = Universal.Highscore.ScoreManager.Get();
 
             enemyManager.ZombieDied += OnZombieDeath;
-            enemyManager.AllZombiesDied += OnAllZombiesDied;
+            //enemyManager.AllZombiesDied += OnAllZombiesDied;
             player.Died += OnPlayerDeath;
         }
 
@@ -38,7 +41,7 @@ namespace GilLaburante.Gameplay
         void AddScore(int newScore)
         {
             //Debug.Log(highscoreManager.score);
-            highscoreManager.score += newScore;
+            scoreManager.score += newScore;
             //Debug.Log(highscoreManager.score);
         }
         void EndGame(bool playerWon)
@@ -53,7 +56,7 @@ namespace GilLaburante.Gameplay
         {
             AddScore(zombieScoreValue);
         }
-        void OnAllZombiesDied()
+        void TrainArrived()
         {
             EndGame(true);
         }
