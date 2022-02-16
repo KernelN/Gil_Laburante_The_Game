@@ -35,14 +35,14 @@ namespace Universal.Highscore
             //get the score higher than the current
             int higherScorePos = GetScorePosition();
 
-            if (higherScorePos < 1)
+            if (higherScorePos == -1)
             {
                 highscoreText.text = "There is no highscore, you're the first!";
                 return;
             }
-            
-            Highscore higherScore = ScoreManager.Get().highscores[higherScorePos - 1];
-            highscoreText.text = "#" + higherScorePos + " " + higherScore.name + " - " + higherScore.score;
+
+            Highscore higherScore = ScoreManager.Get().highscores[higherScorePos];
+            highscoreText.text = "#" + (higherScorePos + 1) + " " + higherScore.name + " - " + higherScore.score;
         }
         int GetScorePosition()
         {
@@ -50,20 +50,21 @@ namespace Universal.Highscore
             System.Collections.Generic.List<Highscore> highscores;
             highscores = ScoreManager.Get().highscores;
 
-            //If there is no list, return falsee
+            //If there is no list, return false
             if (highscores.Count < 1) return -1;
 
             highscores.Sort(HighscoreSorter.Compare); //sort list
 
             //Return position (position 0 counts as #1)
-            for (int i = 0; i < highscores.Count; i++)
+            for (int i = 1; i < highscores.Count; i++)
             {
-                if (highscores[i].score > highscoreManager.score) continue;
-                return i;
+                //Compare highscore with score, if score is bigger, return previous highscore
+                if (highscores[i].score >= highscoreManager.score) continue;
+                return i - 1;
             }
 
             //There was no score lower than this one, so return #lastPos
-            return highscores.Count;
+            return highscores.Count - 1;
         }
 
         //Event Receivers
