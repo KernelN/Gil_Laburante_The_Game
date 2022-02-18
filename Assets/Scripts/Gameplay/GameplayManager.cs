@@ -11,6 +11,7 @@ namespace GilLaburante.Gameplay
             get { return gameState; }
             private set { gameState = value; GameStateChanged?.Invoke(); }
         }
+        public float publicGameTimer { get { return gameTimer; } }
         public bool publicPlayerWon { get { return playerWon; } }
 
         public Action GameStateChanged;
@@ -30,11 +31,20 @@ namespace GilLaburante.Gameplay
         //Unity Events
         private void Start()
         {
+            //Get Score Manager
             scoreManager = Universal.Highscore.ScoreManager.Get();
 
+            //Link Actions
             enemyManager.ZombieDied += OnZombieDeath;
             //enemyManager.AllZombiesDied += OnAllZombiesDied;
             player.Died += OnPlayerDeath;
+
+            //Set Timer
+            gameTimer = gameDuration * 60;
+        }
+        private void Update()
+        {
+            AdvanceTimer();
         }
 
         //Methods
@@ -43,6 +53,19 @@ namespace GilLaburante.Gameplay
             //Debug.Log(highscoreManager.score);
             scoreManager.score += newScore;
             //Debug.Log(highscoreManager.score);
+        }
+        void AdvanceTimer()
+        {
+            if (gameTimer <= 0)
+            {
+                TrainArrived();
+                return;
+            }
+            gameTimer -= Time.deltaTime;
+        }
+        void TrainArrived()
+        {
+            EndGame(true);
         }
         void EndGame(bool playerWon)
         {
@@ -55,10 +78,6 @@ namespace GilLaburante.Gameplay
         void OnZombieDeath()
         {
             AddScore(zombieScoreValue);
-        }
-        void TrainArrived()
-        {
-            EndGame(true);
         }
         void OnPlayerDeath()
         {
