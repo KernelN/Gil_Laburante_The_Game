@@ -12,7 +12,7 @@ namespace GilLaburante.Gameplay.Player
         public Action Died;
 
         [Header("Set Values")]
-        public Guns.GunController gun;
+        public Guns.GunController[] guns;
         [SerializeField] PlayerData data;
         [Tooltip("How much time the player looks to the shoot direction without any input")]
         [SerializeField] float lookAtDelay;
@@ -21,17 +21,18 @@ namespace GilLaburante.Gameplay.Player
         [SerializeField] Vector3 movementDir;
         [SerializeField] Vector3 shootDir;
         [SerializeField] float lookAtTimer;
+        [SerializeField] int currentWeapon;
         bool hasMaxAmmo;
 
         //Unity Events
         private void Awake()
         {
             data.currentStats = data.baseStats;
-            gun.SetActive(true);
+            guns[0].SetActive(true);
         }
         void Start()
         {
-            gun.AmmoChanged += OnAmmoChanged;
+            guns[currentWeapon].AmmoChanged += OnAmmoChanged;
             OnAmmoChanged();
         }
         private void Update()
@@ -44,7 +45,7 @@ namespace GilLaburante.Gameplay.Player
                 Move();
 
             //shoot if needed
-            if (shootDir.sqrMagnitude > 0) 
+            if (shootDir.sqrMagnitude > 0)
                 Shoot();
 
             //advance look at timer
@@ -53,23 +54,29 @@ namespace GilLaburante.Gameplay.Player
         }
 
         //Methods
+        public void ChangeWeapon(int weaponIndex)
+        {
+            guns[currentWeapon].SetActive(false);
+            currentWeapon = weaponIndex;
+            guns[currentWeapon].SetActive(true);
+        }
         public void RechargeWeapon(int ammo)
         {
-            gun.AddAmmo(ammo);
+            guns[currentWeapon].AddAmmo(ammo);
         }
         void Move()
         {
             float speedThisFrame = data.currentStats.speed * Time.deltaTime;
 
             //if there is an obstacle, don't move
-            if (Physics.Raycast(transform.position, movementDir, speedThisFrame + transform.localScale.x*0.75f))
+            if (Physics.Raycast(transform.position, movementDir, speedThisFrame + transform.localScale.x * 0.75f))
             {
                 movementDir *= 0;
                 return;
             }
 
             //if walking is not silent, alert hearers in range
-            if (data.noiseRange > 0) 
+            if (data.noiseRange > 0)
             {
                 Collider[] hearers = Physics.OverlapSphere(transform.position, data.noiseRange);
                 foreach (var hearer in hearers)
@@ -84,7 +91,7 @@ namespace GilLaburante.Gameplay.Player
         }
         void Shoot()
         {
-            gun.Shoot();
+            guns[currentWeapon].Shoot();
             shootDir *= 0;
         }
         void LookAt()
@@ -115,7 +122,10 @@ namespace GilLaburante.Gameplay.Player
         }
         void OnAmmoChanged()
         {
-            bool hasMax = gun.publicData.backupAmmo >= gun.publicData.maxBackupAmmo;
+            bool hasMax =
+                guns[currentWeapon].publicData.backupAmmo
+                >=
+                guns[currentWeapon].publicData.maxBackupAmmo;
             if (hasMaxAmmo == hasMax) return;
             hasMaxAmmo = hasMax;
             BackupAmmoChanged?.Invoke(hasMaxAmmo);
