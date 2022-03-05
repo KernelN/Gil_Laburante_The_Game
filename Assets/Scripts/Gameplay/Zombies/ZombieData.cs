@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GilLaburante.Gameplay.Zombies
+namespace ZombieStocks.Gameplay.Zombies
 {
     [System.Serializable]
 	public struct ZombieData

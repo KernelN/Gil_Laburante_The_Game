@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8B600B3C-C6A2-40D2-B3E4-B2F6D7740254}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{8B600B3C-C6A2-40D2-B3E4-B2F6D7740254}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8B600B3C-C6A2-40D2-B3E4-B2F6D7740254}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Text Mix" ID="{43842ECA-2DB6-4C1E-AF36-521FA100B065}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Music_Switch" ID="{FA34CC15-DA49-454F-A1FD-1933B32C2BD2}" WorkUnitID="{ACAF40C2-CD3B-4BD8-8F52-AD9D55E485DE}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Crowbar" ID="{C0002CE1-6A13-4E58-BD5B-C19C01BBC4DA}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Gun_shot" ID="{02C570B9-E979-436B-859F-FD9BE391F136}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_get_hit" ID="{2742FCCD-020D-445E-890B-431F896FF384}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SFX_Player_dying" ID="{E86DA9FE-A7D9-494E-9291-71FEB619E51D}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Zombie_Agro" ID="{FA809AE2-E1A0-4A88-8989-BD2D5F748284}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Zombie_footsteps" ID="{1FCB3945-3F93-4F79-A7FB-8BA965F620BA}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Zombie_Get_hit" ID="{EAA783DD-8EFE-4B1F-B64F-FAF5CBEAB54D}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="MusicState_GameOver" ID="{754CAE48-E852-44AC-A7D9-7B042A2954D8}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

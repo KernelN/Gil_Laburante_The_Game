@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Universal.SceneManaging;
 
-namespace GilLaburante
+namespace ZombieStocks
 {
     public class GameManager : MonoBehaviourSingleton<GameManager>
     {

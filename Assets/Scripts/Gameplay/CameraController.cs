@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GilLaburante.Gameplay
+namespace ZombieStocks.Gameplay
 {
     public class CameraController : MonoBehaviour
     {

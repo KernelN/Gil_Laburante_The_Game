@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3162894667677877952}
   - component: {fileID: 3162894667677877955}
   - component: {fileID: 3162894667677877983}
+  - component: {fileID: 7341275382896713141}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -126,6 +127,36 @@ MonoBehaviour:
   shootDir: {x: 0, y: 0, z: 0}
   lookAtTimer: 0
   currentWeapon: 0
+--- !u!114 &7341275382896713141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162894667677877954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc085eeb457f4e04ead682d657eedd47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 3162894667677877983}
+  onWalk:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 049accba0fb685c4faa3ecd0c39491a0,
+      type: 2}
+  onHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 84d828e1e8e36be4381527dc08276a5d,
+      type: 2}
+  onDeath:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1bde91028d5bc284fa512e005aa7cad7,
+      type: 2}
+  walkSoundTimerMax: 0.3
+  walkSoundTimer: 0
 --- !u!1001 &3923169898137507880
 PrefabInstance:
   m_ObjectHideFlags: 0

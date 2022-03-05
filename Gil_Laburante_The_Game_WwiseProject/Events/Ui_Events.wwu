@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5CC64962-5389-4477-9F81-5601DE684D8D}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}">
+	<Events>
+		<WorkUnit Name="Ui_Events" ID="{5CC64962-5389-4477-9F81-5601DE684D8D}" OwnerID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="12"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="ui_click_button" ID="{DB7F2FEC-AB69-4659-A8CF-07FA8844A709}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{B31499F0-BAEA-43EA-94B8-C770D739EBA5}" ShortID="532597861">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UI_Click" ID="{6F084A87-DFAB-434A-9D93-B90E15FA1CC0}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

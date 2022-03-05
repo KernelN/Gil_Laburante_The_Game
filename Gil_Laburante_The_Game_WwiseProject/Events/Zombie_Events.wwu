@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}">
+	<Events>
+		<WorkUnit Name="Zombie_Events" ID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" OwnerID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="7"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="zombie_footsteps" ID="{FAA3F133-C73A-439D-BE42-288601C6B0FA}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{0A69D4AC-D4DF-4ACA-BA90-43E58B789770}" ShortID="198711150">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Zombie_footsteps" ID="{1FCB3945-3F93-4F79-A7FB-8BA965F620BA}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="zombie_dying" ID="{4709A50B-4D70-49B4-958A-20333C65B5F9}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{E0DC027B-F3EB-4B6B-ADBE-C5D8E4E6F37B}" ShortID="411624419">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Zombie_Die" ID="{4E700040-786C-4CC0-A8D3-6D790C24A7B0}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="zombie_get_hit" ID="{6DD0693D-C9DF-44A7-88CD-4E7BA63DA19C}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{C8477EC0-AD87-4AFB-90F3-0F8FFF0C78A1}" ShortID="1046800359">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Zombie_Get_hit" ID="{EAA783DD-8EFE-4B1F-B64F-FAF5CBEAB54D}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="zombie_agro" ID="{9109F7DF-3646-4F46-B783-26E197094BF3}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="7"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{22B62BAF-ABE7-49AD-A30C-263CC88F4366}" ShortID="387895199">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Zombie_Agro" ID="{FA809AE2-E1A0-4A88-8989-BD2D5F748284}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

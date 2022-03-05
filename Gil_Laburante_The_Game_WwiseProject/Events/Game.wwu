@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}">
+	<Events>
+		<WorkUnit Name="Game" ID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" OwnerID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="13"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="set_state_game_start" ID="{2944F85D-11F9-45C6-921C-8C898AA7ACAD}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{8769A5C8-AFC1-4547-963A-9DE283397F06}" ShortID="571935751">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Switch" ID="{FA34CC15-DA49-454F-A1FD-1933B32C2BD2}" WorkUnitID="{ACAF40C2-CD3B-4BD8-8F52-AD9D55E485DE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F273E44A-AAB5-4A05-A4F6-BF0CADA8664E}" ShortID="1017476317">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="None" ID="{209CB6A5-D638-4CB3-AF4D-AB9DE8C3CAC1}" WorkUnitID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="set_state_gameplay_Start" ID="{FC87F7A7-45A9-4756-BED2-8B8155AEA7A8}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{49A35A51-30B7-415C-8652-79B32AC7FD11}" ShortID="801893232">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicState_Gameplay" ID="{945AFD67-1007-4B6C-ADBF-72E0A0AA23EE}" WorkUnitID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="set_state_gameover" ID="{F069E56A-7273-427C-99D8-D37006B7B0DC}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{7F8D8BEC-6FC3-4986-B8E1-6A5F15BC5046}" ShortID="993024889">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicState_GameOver" ID="{754CAE48-E852-44AC-A7D9-7B042A2954D8}" WorkUnitID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="set_state_menu" ID="{ED9D68A6-01AE-4D5B-ABB4-67FF38180F04}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{E9656011-DE4F-41AB-9CBF-580B7BDA6062}" ShortID="755598585">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MusicState_Menu" ID="{B9A2D750-D333-4F60-BC62-67DA795C05EE}" WorkUnitID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

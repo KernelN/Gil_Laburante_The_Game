@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Zombies
+namespace ZombieStocks.Gameplay.Zombies
 {
     public class EnemyManager : MonoBehaviourSingletonInScene<EnemyManager>
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Inputs
+namespace ZombieStocks.Gameplay.Inputs
 {
     public class InputManager : MonoBehaviour
     {

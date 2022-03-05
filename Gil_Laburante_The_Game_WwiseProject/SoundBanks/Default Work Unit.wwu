@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8EC65B32-18AA-4BD0-A435-CD0D804E0114}" SchemaVersion="103">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{8EC65B32-18AA-4BD0-A435-CD0D804E0114}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8EC65B32-18AA-4BD0-A435-CD0D804E0114}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{B2A0CC3F-FA82-4189-89E2-2547A905E2B1}">
+					<ObjectInclusionList>
+						<ObjectRef Name="weapon_fire" ID="{F69EBD99-28D9-4000-83DB-DCEB25CBB681}" WorkUnitID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="amb_trainstation" ID="{619BCEC1-5D0D-40F2-BB8F-866A2F1E5921}" WorkUnitID="{BE39BE4E-72AD-4AAC-9B74-D0B4FA593D44}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ammo_pickup" ID="{9A58FC26-87E8-41D8-BF25-98207E601ED0}" WorkUnitID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="set_state_gameover" ID="{F069E56A-7273-427C-99D8-D37006B7B0DC}" WorkUnitID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="zombie_footsteps" ID="{FAA3F133-C73A-439D-BE42-288601C6B0FA}" WorkUnitID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_get_hit" ID="{49D528D0-5CE9-4455-8646-C7A65ED5B1B9}" WorkUnitID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="zombie_get_hit" ID="{6DD0693D-C9DF-44A7-88CD-4E7BA63DA19C}" WorkUnitID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_footsteps" ID="{84620675-8AE6-457B-A450-75874F7ED122}" WorkUnitID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="set_state_game_start" ID="{2944F85D-11F9-45C6-921C-8C898AA7ACAD}" WorkUnitID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ui_click_button" ID="{DB7F2FEC-AB69-4659-A8CF-07FA8844A709}" WorkUnitID="{5CC64962-5389-4477-9F81-5601DE684D8D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="object_destroyed" ID="{E6CFDA20-19D9-466A-9C12-A2C54E61796B}" WorkUnitID="{BE39BE4E-72AD-4AAC-9B74-D0B4FA593D44}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="set_state_gameplay_Start" ID="{FC87F7A7-45A9-4756-BED2-8B8155AEA7A8}" WorkUnitID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="zombie_dying" ID="{4709A50B-4D70-49B4-958A-20333C65B5F9}" WorkUnitID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="health_pickup" ID="{AFFD7B98-7742-4A25-BE71-F9A944F3BE4F}" WorkUnitID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="crowbar_hit" ID="{E957729C-FE93-4CCB-ACFE-69F477EA8721}" WorkUnitID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="set_state_menu" ID="{ED9D68A6-01AE-4D5B-ABB4-67FF38180F04}" WorkUnitID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="player_dying" ID="{96A5D8E1-881D-4E6B-AD23-54D924C5CC91}" WorkUnitID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="zombie_agro" ID="{9109F7DF-3646-4F46-B783-26E197094BF3}" WorkUnitID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>

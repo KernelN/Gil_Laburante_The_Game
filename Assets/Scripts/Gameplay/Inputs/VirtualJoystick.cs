@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace GilLaburante.Gameplay.Inputs
+namespace ZombieStocks.Gameplay.Inputs
 {
     public class VirtualJoystick : VariableJoystick//, IDragHandler, IPointerExitHandler, IPointerUpHandler
     {

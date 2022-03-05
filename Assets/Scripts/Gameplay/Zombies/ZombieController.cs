@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace GilLaburante.Gameplay.Zombies
+namespace ZombieStocks.Gameplay.Zombies
 {
 	public class ZombieController : MonoBehaviour, IHittable, IHearer
 	{

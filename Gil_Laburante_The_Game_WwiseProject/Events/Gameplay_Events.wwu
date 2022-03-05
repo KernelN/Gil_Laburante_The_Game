@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}">
+	<Events>
+		<WorkUnit Name="Gameplay_Events" ID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" OwnerID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="Zombie_Events" ID="{160CB878-4C41-4946-84E9-1D18AC5E612E}" PersistMode="Reference"/>
+				<WorkUnit Name="Player_Events" ID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" PersistMode="Reference"/>
+				<WorkUnit Name="Weapons" ID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" PersistMode="Reference"/>
+				<WorkUnit Name="Scenario" ID="{BE39BE4E-72AD-4AAC-9B74-D0B4FA593D44}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

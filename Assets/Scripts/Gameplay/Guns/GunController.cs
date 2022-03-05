@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Guns
+namespace ZombieStocks.Gameplay.Guns
 {
     public class GunController : MonoBehaviour
     {
+        public Action Shooted;
         public Action AmmoChanged;
         public Action<bool> SettingActive;
         public GunData publicData { get { return data; } }
@@ -62,6 +63,7 @@ namespace GilLaburante.Gameplay.Guns
                 }
             }
 
+            Shooted?.Invoke();
             AmmoChanged.Invoke();
             data.fireTimer = 1 / data.fireRate;
             successfulShot = true;

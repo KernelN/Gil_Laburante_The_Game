@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BE39BE4E-72AD-4AAC-9B74-D0B4FA593D44}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}">
+	<Events>
+		<WorkUnit Name="Scenario" ID="{BE39BE4E-72AD-4AAC-9B74-D0B4FA593D44}" OwnerID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="9"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="amb_trainstation" ID="{619BCEC1-5D0D-40F2-BB8F-866A2F1E5921}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="9"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{F6C7EDC6-AC0C-468C-91FB-666595F5DE00}" ShortID="437432138">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Amb_TR" ID="{D3B09AB3-93D2-4E1B-8EE2-E058EEABBBDB}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="object_destroyed" ID="{E6CFDA20-19D9-466A-9C12-A2C54E61796B}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="9"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{4040DFBA-F02E-411D-A05D-E3AB35B42221}" ShortID="518106675">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Destroy_Object" ID="{92CB06FD-62E3-45A3-B0D5-3F8D9B37A238}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" SchemaVersion="103">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="Gameplay_Events" ID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" PersistMode="Reference"/>
+				<WorkUnit Name="Ui_Events" ID="{5CC64962-5389-4477-9F81-5601DE684D8D}" PersistMode="Reference"/>
+				<WorkUnit Name="Game" ID="{F7588B95-65B4-454F-9B6E-8FFD236BBF33}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

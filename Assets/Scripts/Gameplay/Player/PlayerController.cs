@@ -1,13 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Player
+namespace ZombieStocks.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour, IHittable
     {
         public PlayerData publicData { get { return data; } }
 
-        public Action HealthChanged;
+        public Action Walked;
+        public Action Hitted;
         public Action<bool> BackupAmmoChanged;
         public Action Died;
 
@@ -78,11 +79,15 @@ namespace GilLaburante.Gameplay.Player
             //if walking is not silent, alert hearers in range
             if (data.noiseRange > 0)
             {
+                //Activate Hearers (Gameplay)
                 Collider[] hearers = Physics.OverlapSphere(transform.position, data.noiseRange);
                 foreach (var hearer in hearers)
                 {
                     hearer.GetComponent<IHearer>()?.HearNoise(transform.position, data.noiseRange);
                 }
+
+                //Send Event
+                Walked?.Invoke();
             }
 
             movementDir *= speedThisFrame;
@@ -140,7 +145,7 @@ namespace GilLaburante.Gameplay.Player
                 data.currentStats.health = 0;
                 Died?.Invoke();
             }
-            HealthChanged?.Invoke();
+            Hitted?.Invoke();
         }
     }
 }

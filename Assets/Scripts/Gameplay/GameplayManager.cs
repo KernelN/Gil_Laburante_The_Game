@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay
+namespace ZombieStocks.Gameplay
 {
     [Serializable] public enum GameState { ingame, pause, gameOver }
     public class GameplayManager : MonoBehaviourSingletonInScene<GameplayManager>

@@ -1932,25 +1932,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 430574276}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &511739044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3162894667210555018, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3162894667989187566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &511739048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511739044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5537cbba96e46940aa9e8b9bb845735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunController: {fileID: 1987511654}
 --- !u!1 &527679352
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,6 +5665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1650018830}
   - component: {fileID: 1650018829}
+  - component: {fileID: 1650018831}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -5731,6 +5713,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650018831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650018828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2842fcf41a6b5445b409f5f0738ec15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1bf57c63d36b0644aa6919392fb929ee,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1668845117
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,32 +5878,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ac4bcd3ebf63614ea98eca55b25ad62, type: 3}
---- !u!1 &1673757659 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8030851522027787958, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3162894667989187566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1673757660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673757659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5537cbba96e46940aa9e8b9bb845735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunController: {fileID: 1673757661}
 --- !u!114 &1673757661 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8215375258212597616, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
     type: 3}
   m_PrefabInstance: {fileID: 3162894667989187566}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673757659}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2cf361b0cf7902499828558b124b7ae, type: 3}
@@ -7074,7 +7062,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3162894667989187566}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511739044}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2cf361b0cf7902499828558b124b7ae, type: 3}
@@ -7850,6 +7838,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7341275382896713141, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
+        type: 3}
+      propertyPath: music.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: e5f9e55b2d70a374780f994c136140fd,
+        type: 2}
+    - target: {fileID: 7341275382896713141, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
+        type: 3}
+      propertyPath: footsteps.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 049accba0fb685c4faa3ecd0c39491a0,
+        type: 2}
     - target: {fileID: 8030851522027787958, guid: a9ee1ca46d63b9541b3620ee7968aa3b,
         type: 3}
       propertyPath: m_IsActive

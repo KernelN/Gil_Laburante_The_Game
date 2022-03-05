@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2131677952108275374}
   - component: {fileID: 2131677952108275361}
   - component: {fileID: 2131677952108275360}
+  - component: {fileID: 6644616920411062426}
+  - component: {fileID: 2049545720500416880}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -112,6 +114,38 @@ MonoBehaviour:
     backupAmmo: 0
     ammo: 0
   successfulShot: 0
+--- !u!114 &6644616920411062426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131677952108275362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5537cbba96e46940aa9e8b9bb845735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunController: {fileID: 2131677952108275360}
+--- !u!114 &2049545720500416880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131677952108275362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8eec21b60cdfa84e92f74b0886f72c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 2131677952108275360}
+  onShoot:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cfbd09312267a8041928fec75b453613,
+      type: 2}
+  isActive: 0
 --- !u!1 &2875786473062802736
 GameObject:
   m_ObjectHideFlags: 0

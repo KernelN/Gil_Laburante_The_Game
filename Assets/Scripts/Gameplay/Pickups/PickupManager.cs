@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Pickups
+namespace ZombieStocks.Gameplay.Pickups
 {
 	public class PickupManager : MonoBehaviour
 	{

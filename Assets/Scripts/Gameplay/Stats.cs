@@ -1,4 +1,4 @@
-﻿namespace GilLaburante.Gameplay
+﻿namespace ZombieStocks.Gameplay
 {
     [System.Serializable]
     public struct Stats

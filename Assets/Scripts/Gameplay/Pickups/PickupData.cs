@@ -1,4 +1,4 @@
-﻿namespace GilLaburante.Gameplay.Pickups
+﻿namespace ZombieStocks.Gameplay.Pickups
 {
 	public enum PickupType { ammo }
 	[System.Serializable]

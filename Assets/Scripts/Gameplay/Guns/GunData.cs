@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Guns
+namespace ZombieStocks.Gameplay.Guns
 {
 	[Serializable]
 	public struct GunData

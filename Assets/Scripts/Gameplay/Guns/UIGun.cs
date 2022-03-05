@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace GilLaburante.Gameplay.Guns
+namespace ZombieStocks.Gameplay.Guns
 {
     public class UIGun : MonoBehaviour
     {

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{751F5C4B-38ED-4878-BF9A-EEE352876CB2}" SchemaVersion="103">
 	<MixingSessions>
-		<WorkUnit Name="Default Work Unit" ID="{751F5C4B-38ED-4878-BF9A-EEE352876CB2}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{751F5C4B-38ED-4878-BF9A-EEE352876CB2}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="MIX01 Session" ID="{C4517639-37AE-4483-A2BD-1D94E58935ED}">
+					<ObjectList>
+						<ObjectRef Name="BGM_Gameplay" ID="{B34449BB-5676-4AEF-A012-5393B9C7AA1E}" WorkUnitID="{ACAF40C2-CD3B-4BD8-8F52-AD9D55E485DE}"/>
+						<ObjectRef Name="BGM_GameOver&amp;Menu" ID="{E4D0A0CD-2287-4EC9-A623-91EE0E5B647C}" WorkUnitID="{ACAF40C2-CD3B-4BD8-8F52-AD9D55E485DE}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
 	</MixingSessions>
 </WwiseDocument>

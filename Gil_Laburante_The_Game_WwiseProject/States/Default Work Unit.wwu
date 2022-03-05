@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}" SchemaVersion="103">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8B790FC4-743D-472D-8C96-CCFEEE4B0121}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Music_States" ID="{7DAD07EB-4FEB-4F4A-8D44-469F499BA380}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="19"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{209CB6A5-D638-4CB3-AF4D-AB9DE8C3CAC1}"/>
+						<State Name="MusicState_GameOver" ID="{754CAE48-E852-44AC-A7D9-7B042A2954D8}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</State>
+						<State Name="MusicState_Gameplay" ID="{945AFD67-1007-4B6C-ADBF-72E0A0AA23EE}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</State>
+						<State Name="MusicState_Menu" ID="{B9A2D750-D333-4F60-BC62-67DA795C05EE}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</State>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

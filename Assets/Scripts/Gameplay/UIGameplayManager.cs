@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace GilLaburante.Gameplay.UI
+namespace ZombieStocks.Gameplay.UI
 {
 	public class UIGameplayManager : MonoBehaviour
 	{        

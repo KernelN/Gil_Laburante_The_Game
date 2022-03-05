@@ -10,7 +10,7 @@
   <ShowSpatialAudioWarningMsg>true</ShowSpatialAudioWarningMsg>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>D:\Programas\Wwise\Wwise 2021.1.1.7601</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../Gil_Laburante_The_Game/Gil_Laburante_The_Game_WwiseProject/Gil_Laburante_The_Game_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../Gil_Laburante_The_Game_WwiseProject/Gil_Laburante_The_Game_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
   <WaapiPort>8080</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>

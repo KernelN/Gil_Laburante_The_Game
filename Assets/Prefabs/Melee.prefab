@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5113162510752896161}
   - component: {fileID: 8731151230051115401}
   - component: {fileID: 5334843658113134183}
+  - component: {fileID: 4701678407677850153}
+  - component: {fileID: 9176652141669246436}
   m_Layer: 0
   m_Name: Melee
   m_TagString: Untagged
@@ -110,3 +112,34 @@ MonoBehaviour:
     backupAmmo: 0
     ammo: 0
   successfulShot: 0
+--- !u!114 &4701678407677850153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302959921625319329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5537cbba96e46940aa9e8b9bb845735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunController: {fileID: 5334843658113134183}
+--- !u!114 &9176652141669246436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302959921625319329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8eec21b60cdfa84e92f74b0886f72c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 5334843658113134183}
+  onShoot:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  isActive: 0

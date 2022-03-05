@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GilLaburante.Gameplay.Pickups
+namespace ZombieStocks.Gameplay.Pickups
 {
 	public class PickupController : MonoBehaviour//, IHittable
 	{

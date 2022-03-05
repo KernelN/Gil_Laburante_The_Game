@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}">
+	<Events>
+		<WorkUnit Name="Player_Events" ID="{99271A65-21A2-4B42-ADCE-DA5BF469CFA9}" OwnerID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="1"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="player_footsteps" ID="{84620675-8AE6-457B-A450-75874F7ED122}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{71D698B0-AFBF-497F-9D53-9781EE119A18}" ShortID="579410192">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_Footsteps" ID="{C6D1F857-7FF0-41C7-9A45-082B67A99938}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="player_dying" ID="{96A5D8E1-881D-4E6B-AD23-54D924C5CC91}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{A16B029E-598E-43A3-AFF0-812254A1B4FA}" ShortID="111044352">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Player_dying" ID="{E86DA9FE-A7D9-494E-9291-71FEB619E51D}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="player_get_hit" ID="{49D528D0-5CE9-4455-8646-C7A65ED5B1B9}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{33AAB605-5666-4C05-90D4-850A4D630CD4}" ShortID="13668450">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Player_get_hit" ID="{2742FCCD-020D-445E-890B-431F896FF384}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="health_pickup" ID="{AFFD7B98-7742-4A25-BE71-F9A944F3BE4F}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="1"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{EF91FA5B-FE0C-47DC-B752-D673512EFECB}" ShortID="677419252">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Health_Pickup" ID="{211366E8-596D-4D23-B108-1DA775A4899C}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

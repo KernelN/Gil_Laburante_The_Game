@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace GilLaburante.Gameplay.Player
+namespace ZombieStocks.Gameplay.Player
 {
 	public class UIPlayer : MonoBehaviour
 	{
@@ -18,7 +18,7 @@ namespace GilLaburante.Gameplay.Player
                 controller = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
             }
 
-            controller.HealthChanged += OnHealthChanged;
+            controller.Hitted += OnHealthChanged;
             baseHealth = controller.publicData.currentStats.health;
             OnHealthChanged();
         }

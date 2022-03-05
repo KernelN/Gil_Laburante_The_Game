@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" SchemaVersion="103" RootDocumentID="{4E96CFC1-2EE4-440E-9C9F-8BBF0AAAAF0C}" ParentDocumentID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}">
+	<Events>
+		<WorkUnit Name="Weapons" ID="{61D0004F-DC8B-491C-8FB2-B8B59699AF77}" OwnerID="{87EAD801-D242-4BFF-80AC-66A519FB0BB3}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="weapon_fire" ID="{F69EBD99-28D9-4000-83DB-DCEB25CBB681}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{CE72CAD1-E3B3-43E1-901C-A15D03EE4C84}" ShortID="971651740">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun_shot" ID="{02C570B9-E979-436B-859F-FD9BE391F136}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="crowbar_hit" ID="{E957729C-FE93-4CCB-ACFE-69F477EA8721}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{A5A35C74-9E00-47D9-890B-D75CEE43206C}" ShortID="404250976">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crowbar" ID="{C0002CE1-6A13-4E58-BD5B-C19C01BBC4DA}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ammo_pickup" ID="{9A58FC26-87E8-41D8-BF25-98207E601ED0}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="3"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{2526FBE8-C56A-4084-BB1A-0B87E177F5FE}" ShortID="158065327">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Ammo_Pickup" ID="{DBE0204E-1184-4E98-BFBB-E058BF7F82E3}" WorkUnitID="{A30CDF3B-47AF-43DC-A66A-25F8C5E15D17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

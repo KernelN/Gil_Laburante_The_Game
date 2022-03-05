@@ -1,4 +1,4 @@
-﻿namespace GilLaburante.Gameplay.Inputs
+﻿namespace ZombieStocks.Gameplay.Inputs
 {
     public class ShootJoystick : VirtualJoystick
     {
