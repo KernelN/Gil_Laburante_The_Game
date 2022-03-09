@@ -8,11 +8,15 @@ namespace ZombieStocks.Gameplay.Zombies
 	{
 		public ZombieData publicData { get { return data; } }
 
+        public Action Hitted;
         public Action Died;
+        public Action Walked;
+        public Action TargetFound;
 
 		[Header("Set Values")]
 		[SerializeField] NavMeshAgent navMesh;
 		[SerializeField] ZombieData data;
+        [SerializeField] float minDistanceToInvokeWalkAction;
 
         [Header("Runtime Values")]
 		[SerializeField] Transform target;
@@ -28,6 +32,9 @@ namespace ZombieStocks.Gameplay.Zombies
             {
                 navMesh = transform.GetComponent<NavMeshAgent>();
             }
+
+            //Set target position as position to avoid walking sound while
+            //targetPos = transform.position;
         }
 		void Update()
         {
@@ -43,6 +50,9 @@ namespace ZombieStocks.Gameplay.Zombies
             Debug.DrawLine(transform.position, transform.position + transform.right * data.detectRange, Color.green);
             Debug.DrawLine(transform.position, transform.position - transform.right * data.detectRange, Color.green);
 #endif
+
+            if (navMesh.remainingDistance < minDistanceToInvokeWalkAction) return;
+            Walked?.Invoke();
         }
 
         //Methods
@@ -81,6 +91,7 @@ namespace ZombieStocks.Gameplay.Zombies
         public void GetHitted(int damage)
         {
             data.currentStats.health -= damage;
+            Hitted?.Invoke();
             if (data.currentStats.health <= 0)
             {
                 Died?.Invoke();

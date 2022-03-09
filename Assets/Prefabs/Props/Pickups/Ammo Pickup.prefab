@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 126692284275961053}
   - component: {fileID: 126692284275961054}
   - component: {fileID: 126692284275961059}
+  - component: {fileID: 650305827625447908}
   m_Layer: 0
   m_Name: Ammo Pickup
   m_TagString: Untagged
@@ -112,3 +113,22 @@ MonoBehaviour:
       m_Bits: 1024
     type: 0
     value: 5
+  canBePicked: 0
+--- !u!114 &650305827625447908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126692284275961048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbaeae208e6a344b9aea2c14493ec1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a44828e6d214e21449e0c5051e64080e,
+      type: 2}
+  controller: {fileID: 126692284275961059}

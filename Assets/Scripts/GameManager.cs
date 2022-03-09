@@ -5,6 +5,8 @@ namespace ZombieStocks
 {
     public class GameManager : MonoBehaviourSingleton<GameManager>
     {
+        public System.Action SceneChanged;
+
         public Scenes targetScene { get { return currentScene; } }
         [SerializeField] Scenes currentScene;
 
@@ -29,6 +31,7 @@ namespace ZombieStocks
             //Update "currentScene" and load
             currentScene = sceneToLoad;
             SceneLoader.LoadScene(currentScene);
+            SceneChanged?.Invoke();
         }
         public void QuitGame()
         {
