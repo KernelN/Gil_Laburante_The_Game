@@ -4,25 +4,26 @@ using UnityEngine.AI;
 
 namespace ZombieStocks.Gameplay.Zombies
 {
-	public class ZombieController : MonoBehaviour, IHittable, IHearer
-	{
-		public ZombieData publicData { get { return data; } }
+    public class ZombieController : MonoBehaviour, IHittable, IHearer
+    {
+        public ZombieData publicData { get { return data; } }
 
+        public Action Attacked;
         public Action Hitted;
         public Action Died;
         public Action Walked;
         public Action TargetFound;
 
-		[Header("Set Values")]
-		[SerializeField] NavMeshAgent navMesh;
-		[SerializeField] ZombieData data;
+        [Header("Set Values")]
+        [SerializeField] NavMeshAgent navMesh;
+        [SerializeField] ZombieData data;
         [SerializeField] float minDistanceToInvokeWalkAction;
 
         [Header("Runtime Values")]
-		[SerializeField] Transform target;
-		[SerializeField] Vector3 targetPos;
-		[SerializeField] float distanceToTarget;
-		[SerializeField] float attackTimer;
+        [SerializeField] Transform target;
+        [SerializeField] Vector3 targetPos;
+        [SerializeField] float distanceToTarget;
+        [SerializeField] float attackTimer;
 
         //Unity Events
         private void Start()
@@ -36,7 +37,7 @@ namespace ZombieStocks.Gameplay.Zombies
             //Set target position as position to avoid walking sound while
             //targetPos = transform.position;
         }
-		void Update()
+        void Update()
         {
             AttackTarget();
 
@@ -85,6 +86,9 @@ namespace ZombieStocks.Gameplay.Zombies
             //Hit target
             target.GetComponent<IHittable>()?.GetHitted(data.currentStats.damage);
             attackTimer = data.attackSpeed;
+
+            //Send Event
+            Attacked?.Invoke();
         }
 
         //Interface Implemantation
